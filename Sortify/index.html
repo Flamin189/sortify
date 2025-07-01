@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithm Visualiser</title>
+    <link  rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="colorMode">
+        <svg id="sun" width="30" height="30" id="light-icon">
+        <circle cx="15" cy="15" r="6" fill="currentColor" />
+
+        <line
+            id="ray"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            x1="15"
+            y1="1"
+            x2="15"
+            y2="4"
+        ></line>
+
+        <use href="#ray" transform="rotate(45 15 15)" />
+        <use href="#ray" transform="rotate(90 15 15)" />
+        <use href="#ray" transform="rotate(135 15 15)" />
+        <use href="#ray" transform="rotate(180 15 15)" />
+        <use href="#ray" transform="rotate(225 15 15)" />
+        <use href="#ray" transform="rotate(270 15 15)" />
+        <use href="#ray" transform="rotate(315 15 15)" />
+        </svg>
+        <svg id="moon" width="30" height="30" id="dark-icon">
+        <path
+            fill="currentColor"
+            d="
+            M 23, 5
+            A 12 12 0 1 0 23, 25
+            A 12 12 0 0 1 23, 5"
+        />
+        </svg>
+    </button>
+    <h1>SORTIFY v2.0</h1>
+    <div class="container">
+        <!-- <div class="legend"><div class="colorBlock"></div><div class="standsfor"></div></div> -->
+        <div class="topBut"><button id="toggle" onclick="toggle()"><img src="backward.svg"></button></div>
+        <div class="bars">
+                <div class="bar" id="b1"><div class="lvl"></div></div>
+                <div class="bar" id="b2"><div class="lvl"></div></div>
+                <div class="bar" id="b3"><div class="lvl"></div></div>
+                <div class="bar" id="b4"><div class="lvl"></div></div>
+                <div class="bar" id="b5"><div class="lvl"></div></div>
+                <div class="bar" id="b6"><div class="lvl"></div></div>
+                <div class="bar" id="b7"><div class="lvl"></div></div>
+        </div>
+        <div class="barsInput">
+            <button id="decrement" onclick="dec()">-</button>
+            <input id="noOfBars"style="width:250px;" type="number" inputmode="numeric" value="7" oninput="onInp(this.value)">
+            <button id="increment" onclick="add()">+</button>
+        </div>
+        <div class="ranger">
+            <label for="time">TIME / MOVE :</label>
+            <input type="range" id="time" value="100" min="0" max="200" step="50" oninput="this.nextElementSibling.value = this.value">
+            <output>100</output>ms
+        </div>
+        <div class="execute">
+            <button id="shuffle">SHUFFLE</button>
+            <select id="options">
+                <option value="1">BUBBLE SORT</option>
+                <option value="2">INSERTION SORT</option>
+                <option value="3">SELECTION SORT</option>
+                <option value="4">MERGE SORT</option>
+                <option value="5">QUICK SORT</option>
+                <option value="6">HEAP SORT</option>
+            </select>
+            <button id="sort">SORT</button>
+        </div>
+        <!-- <div class="buttons">
+            <button id="shuffle">SHUFFLE</button>
+            <button id="bubble">BUBBLE SORT</button>
+            <button id="insert">INSERTION SORT</button>
+            <button id="select">SELECTION SORT</button>
+        </div> -->
+    </div>
+    <footer><span>
+        Copyright &copy; 2025 Sortify. All rights reserved.  
+        Built with ❤️ by <a href="https://www.linkedin.com/in/dheaneshwar-partheeban-3314ba25a/">Dheaneshwar P</a>.</span>
+    </footer>    
+    <script src="script.js"></script>
+</body>
+</html>
